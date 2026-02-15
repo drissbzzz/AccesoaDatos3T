@@ -90,6 +90,13 @@ def buscar_por_estado(estado):
         incidencias.append(incidencia)
     return incidencias
 
+def eliminar(id_incidencia):
+    conexion = obtener_conexion()
+    cursor = conexion.cursor()
+    cursor.execute("DELETE FROM incidencias WHERE id=?", (id_incidencia,))
+    conexion.commit()
+    conexion.close()
+
 def actualizar_estado(estado, id_incidencia): #Cambia el estado de una incidencia
     conexion = obtener_conexion()  # abre la conexión
     cursor = conexion.cursor()  # crear el cursor

@@ -26,3 +26,5 @@ def cambiar_estado(estado, id_incidencia):
         incidencia_repository.actualizar_estado(estado, id_incidencia)
     else:
         raise ValueError("El estado es inválido")  #Lanzamos el error de valor para poder manejarlo con la UI
+def eliminar_incidencia(id_incidencia):
+    return incidencia_repository.eliminar(id_incidencia)
