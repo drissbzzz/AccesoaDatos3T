@@ -110,3 +110,47 @@ def actualizar_estado(estado, id_incidencia): #Cambia el estado de una incidenci
     ))  # Inserta los valores en orden en los "?"
     conexion.commit()  # confirma los cambios
     conexion.close()  # cierra la consulta
+def contar_por_estado():
+    #Para devolver el conteo del número de incidencias por estado, de más a menos
+    conexion = obtener_conexion()
+    cursor = conexion.cursor()
+    cursor.execute("""
+        SELECT estado, COUNT(*) as cantidad
+        FROM incidencias
+        GROUP BY estado
+        ORDER BY cantidad DESC
+    """)
+    resultados = cursor.fetchall()
+    conexion.close()
+    return resultados
+
+def contar_por_categoria():
+    #Para devolver el conteo del número de incidencias por categoría, de más a menos
+    conexion = obtener_conexion()
+    cursor = conexion.cursor()
+    cursor.execute("""
+        SELECT categoria, COUNT(*) as cantidad
+        FROM incidencias
+        GROUP BY categoria
+        ORDER BY cantidad DESC
+    """)
+    resultados = cursor.fetchall()
+    conexion.close()
+    return resultados
+
+
+def activos_con_mas_incidencias():
+    #Para devolver el conteo del número de activos con más incidencias y hacer un top 5
+    conexion = obtener_conexion()
+    cursor = conexion.cursor()
+    cursor.execute("""
+        SELECT i.activo_id, a.codigo, COUNT(*) as cantidad
+        FROM incidencias i
+        JOIN activos a ON i.activo_id = a.id
+        GROUP BY i.activo_id
+        ORDER BY cantidad DESC
+        LIMIT 5
+    """)
+    resultados = cursor.fetchall()
+    conexion.close()
+    return resultados

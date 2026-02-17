@@ -1,10 +1,11 @@
 import customtkinter as ctk
 
+from utils.config import config
+
 #Configuración global de apariencia
-color_boton = "#FF6B00"
-color_hover = "#FF8C00"
-color_fondo = "#1a1a1a"
-ctk.set_appearance_mode("dark")
+color_boton = config["color_boton"]
+color_hover = config["color_hover"]
+color_fondo = config["color_fondo"]
 
 class LoginWindow(ctk.CTk):
     def __init__(self):
@@ -51,13 +52,14 @@ class LoginWindow(ctk.CTk):
         # Usuarios
         usuarios = {
             "123": {"password": "123", "rol": "Administrador"},
-            "driss": {"password": "Apruebanosxfa", "rol": "Técnico"},
-            "carlos": {"password": "Apruebanosxfa", "rol": "Técnico"}
+            "jose": {"password": "Thepunisher", "rol": "Administrador"},
+            "driss": {"password": "ramadanmubarak", "rol": "Técnico"},
+            "carlos": {"password": "murcian4life", "rol": "Técnico"}
         }
         if usuario in usuarios:
             if usuarios[usuario]["password"] == password:
                 if usuarios[usuario]["rol"] == rol:
-                    self.abrir_home()  #Abre la app según el rol
+                    self.abrir_home(rol)  #Abre la app según el rol
                     self.entry_password.delete(0, "end")
                     self.entry_usuario.delete(0, "end")
                     return
@@ -65,9 +67,9 @@ class LoginWindow(ctk.CTk):
         ctk.CTkLabel(self, text="Credenciales incorrectas",text_color="red").place(x=20, y=280)
         self.entry_password.delete(0, "end")
 
-    def abrir_home(self):
+    def abrir_home(self, rol):
         from ui.home_ui import Home
         self.withdraw()  #oculta el login
-        app = Home(self)  #pasa self como padre
+        app = Home(self, rol)  #pasa self como padre
         self.wait_window(app)
         self.deiconify()

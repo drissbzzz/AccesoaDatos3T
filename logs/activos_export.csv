@@ -1,0 +1,21 @@
+ID,Código,Tipo,Marca,Modelo,Nº Serie,Ubicación,Fecha Alta,Estado
+1,ACT-1001,PC,Dell,OptiPlex 7090,SN001234,Aula 101,2026-02-18,Operativo
+2,ACT-1002,PC,HP,ProDesk 600,SN001235,Aula 101,2026-02-18,Operativo
+3,ACT-1003,PC,Lenovo,ThinkCentre M70q,SN001236,Aula 102,2026-02-18,Operativo
+4,ACT-1004,PC,Dell,OptiPlex 5090,SN001237,Aula 102,2026-02-18,Averiado
+5,ACT-1005,PC,HP,ProDesk 400,SN001238,Aula 103,2026-02-18,Operativo
+6,ACT-1006,PC,Dell,OptiPlex 3090,SN001239,Laboratorio,2026-02-18,Operativo
+7,ACT-1007,PC,Lenovo,ThinkCentre M90,SN001240,Laboratorio,2026-02-18,Operativo
+8,ACT-2001,Portátil,HP,EliteBook 840,SN002001,Despacho Dirección,2026-02-18,Operativo
+9,ACT-2002,Portátil,Dell,Latitude 5420,SN002002,Secretaría,2026-02-18,Operativo
+10,ACT-2003,Portátil,Lenovo,ThinkPad E15,SN002003,Biblioteca,2026-02-18,Operativo
+11,ACT-2004,Portátil,HP,ProBook 450,SN002004,Sala Profesores,2026-02-18,Averiado
+12,ACT-2005,Portátil,Dell,Latitude 3520,SN002005,Departamento TIC,2026-02-18,Operativo
+13,ACT-3001,Impresora,HP,LaserJet Pro M404,SN003001,Aula 101,2026-02-18,Operativo
+14,ACT-3002,Impresora,Canon,Pixma G6020,SN003002,Secretaría,2026-02-18,Operativo
+15,ACT-3003,Impresora,Epson,EcoTank L3250,SN003003,Biblioteca,2026-02-18,Averiado
+16,ACT-3004,Impresora,HP,LaserJet M428,SN003004,Sala Profesores,2026-02-18,Operativo
+17,ACT-4001,Router,TP-Link,Archer AX50,SN004001,Sala Servidores,2026-02-18,Operativo
+18,ACT-4002,Router,Cisco,RV340,SN004002,Sala Servidores,2026-02-18,Operativo
+19,ACT-4003,Router,Ubiquiti,EdgeRouter X,SN004003,Planta 2,2026-02-18,Operativo
+20,ACT-4004,Router,TP-Link,Archer C80,SN004004,Biblioteca,2026-02-18,Retirado

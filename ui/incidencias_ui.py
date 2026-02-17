@@ -3,15 +3,19 @@ from tkinter import ttk
 from services import incidencia_service
 from tkinter import messagebox
 
-color_boton = "#FF6B00"
-color_hover = "#FF8C00"
-color_fondo = "#1a1a1a"
+from utils.config import config
+from utils.export import exportar_incidencias_json
+from utils.logger import registrar_error, registrar_info
 
+color_boton = config["color_boton"]
+color_hover = config["color_hover"]
+color_fondo = config["color_fondo"]
 
 class Incidencias(ctk.CTkToplevel):
 
-    def __init__(self, parent):
+    def __init__(self, parent, rol):
         super().__init__(parent)
+        self.rol=rol
         self.title("Gestión de Incidencias")
         self.resizable(False, False)
         self.configure(fg_color=color_fondo)
@@ -157,12 +161,21 @@ class Incidencias(ctk.CTkToplevel):
         btn_exportar = ctk.CTkButton(frame_export, text="Exportar JSON", width=200,fg_color=color_boton, hover_color=color_hover,command=self.exportar)
         btn_exportar.grid(row=0, column=0, padx=5)
 
+        #Desactivamos los botones si es Técnico
+        if self.rol == "Técnico":
+            btn_crear.configure(state="disabled")
+            btn_eliminar.configure(state="disabled")
+
         #Cargar datos de la tabla al abrir la interfaz
         self.cargar_tabla()
 
     #Metodos
     def actualizar_log(self, mensaje):
         self.texto_log.configure(text=mensaje)
+        if "Error" in mensaje:
+            registrar_error(mensaje)
+        else:
+            registrar_info(mensaje)
 
     def limpiar_formulario(self):
         for campo, elemento in self.entries.items():
@@ -193,6 +206,7 @@ class Incidencias(ctk.CTkToplevel):
             self.tabla.delete(fila) #Borramos cada elemento antes de rellenar para no duplicarlo
         if incidencias is None: #Si no le pasamos ninguna lista filtrada, le pasamos todas las incidencias
             incidencias = incidencia_service.obtener_incidencias()
+        self.incidencias_actuales = incidencias
         for i in incidencias: #Insertamos cada incidencia
             self.tabla.insert("", "end", values=(
                 i.id, i.activo_id, i.fecha_apertura, i.prioridad,
@@ -286,4 +300,10 @@ class Incidencias(ctk.CTkToplevel):
             self.actualizar_log(f"{e}")
 
     def exportar(self):
-        pass
+        #Obtener incidencias actuales de la tabla
+        incidencias = self.incidencias_actuales
+        ruta = config["ruta_export_incidencias"]
+        if exportar_incidencias_json(incidencias, ruta):
+            self.actualizar_log(f"Exportadas {len(incidencias)} incidencias")
+        else:
+            self.actualizar_log("Error al exportar")

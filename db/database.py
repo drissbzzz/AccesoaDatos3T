@@ -1,8 +1,8 @@
 import sqlite3
-
+from utils.config import config
 
 def obtener_conexion():
-    conexion = sqlite3.connect("db/inventario.db") #Buscamos conectarnos al archivo.db, si no existe; se creará automáticamente
+    conexion = sqlite3.connect(config["ruta_bd"]) #Usamos la configuración que hemos predefinido para la ruta
     conexion.execute("PRAGMA foreign_keys = ON") #SQLite tiene las foreign keys desactivadas, hay que activarlas
     return conexion
 

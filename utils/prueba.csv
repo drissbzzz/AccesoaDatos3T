@@ -1,0 +1,9 @@
+Código,Tipo,Marca,Modelo,Nº Serie,Ubicación,Estado
+ACT-1001,PC,Dell,OptiPlex 7090,SN001234,Aula 101,Operativo
+ACT-1002,Portátil,HP,EliteBook 840,SN001235,Despacho 1,Operativo
+ACT-1003,Impresora,Canon,Pixma G6020,SN001236,Secretaría,Operativo
+ACT-1004,Router,TP-Link,Archer AX50,SN001237,Sala Servidores,Operativo
+ACT-1005,PC,Lenovo,ThinkCentre M70q,SN001238,Aula 102,Averiado
+ACT-1006,Portátil,Dell,Latitude 5420,SN001239,Biblioteca,Operativo
+ACT-1007,Impresora,HP,LaserJet Pro M404,SN001240,Aula 103,Operativo
+ACT-1008,PC,HP,ProDesk 600,SN001241,Laboratorio,Operativo

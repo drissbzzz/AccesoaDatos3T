@@ -1,18 +1,23 @@
 import customtkinter as ctk
-from tkinter import ttk
+from tkinter import ttk, filedialog
 from services import activo_service
 from tkinter import messagebox
 
+from utils.config import config
+from utils.export import exportar_activos_csv
+from utils.importar_csv import importar_activos_csv
+from utils.logger import registrar_error, registrar_info
 
-color_boton = "#FF6B00"
-color_hover = "#FF8C00"
-color_fondo = "#1a1a1a"
+color_boton = config["color_boton"]
+color_hover = config["color_hover"]
+color_fondo = config["color_fondo"]
 
 
 class Activos(ctk.CTkToplevel):
 
-    def __init__(self, parent):
+    def __init__(self, parent, rol):
         super().__init__(parent)
+        self.rol = rol
         self.title("Gestión de Activos")
         self.resizable(False, False)
         self.configure(fg_color=color_fondo)
@@ -148,14 +153,21 @@ class Activos(ctk.CTkToplevel):
         btn_eliminar = ctk.CTkButton(frame_crud, text="Eliminar",width=100,fg_color=color_boton, hover_color=color_hover,command=self.eliminar)
         btn_eliminar.grid(row=0, column=2, padx=5)
 
-        # Botones importar/exportar
+        #Botones importar/exportar
         frame_import = ctk.CTkFrame(frame_der, fg_color="transparent")
         frame_import.grid(row=len(campos)+2, column=0, columnspan=2, pady=(5, 15))#Añadimos el frame de los botones i/e justo debajo de los otros
+
         btn_import = ctk.CTkButton(frame_import, text="Importar CSV", width=140,fg_color=color_boton, hover_color=color_hover,command=self.importar)
         btn_import.grid(row=0, column=0, padx=5)
-
         btn_exportar = ctk.CTkButton(frame_import, text="Exportar", width=140,fg_color=color_boton, hover_color=color_hover,command=self.exportar)
         btn_exportar.grid(row=0, column=1, padx=5)
+
+        #Desactivar botones si es Técnico
+        if self.rol == "Técnico":
+            btn_crear.configure(state="disabled")
+            btn_editar.configure(state="disabled")
+            btn_eliminar.configure(state="disabled")
+            btn_import.configure(state="disabled")
 
         #Cargar datos de la tabla al abrir la interfaz
         self.cargar_tabla()
@@ -163,6 +175,10 @@ class Activos(ctk.CTkToplevel):
     #Metodos
     def actualizar_log(self, mensaje):
         self.texto_log.configure(text=mensaje)
+        if "Error" in mensaje:
+            registrar_error(mensaje)
+        else:
+            registrar_info(mensaje)
 
     def limpiar_formulario(self):
         for campo, elemento in self.entries.items():
@@ -195,8 +211,8 @@ class Activos(ctk.CTkToplevel):
             self.tabla.delete(fila)#Borramos cada elemento antes de rellenar para no duplicarlo
         if activos is None: #Si no le pasamos ninguna lista de activos filtrada, le pasamos todos los activos
             activos = activo_service.obtener_activos()
+        self.activos_actuales = activos
         for a in activos: #Insertamos cada activo
-            print(f"id={a.id} codigo={a.codigo} fecha={a.fecha_alta} estado={a.estado}")  # ← añade esto
             self.tabla.insert("", "end", values=(
                 a.id, a.codigo, a.tipo, a.marca, a.modelo,
                 a.n_serie, a.ubicacion, a.fecha_alta, a.estado
@@ -304,7 +320,38 @@ class Activos(ctk.CTkToplevel):
             self.actualizar_log(f"{e}")
 
     def importar(self):
-        pass  
+        #Creamos una ventana para seleccionar el archivo
+        ruta = filedialog.askopenfilename(title="Seleccionar CSV",filetypes=[("CSV files", "*.csv")])
+        if not ruta:  #Si no hay ruta
+            return
+        #Llenamos dos listas de activos y errores
+        self.actualizar_log("Importando, tenga paciencia Jose...")
+        self.update()
+        activos, errores = importar_activos_csv(ruta)
+        #Insertamos los activos en la BD
+        contador = 0
+        for a in activos:
+            try:
+                activo_service.crear_activo(
+                    a.codigo, a.tipo, a.marca, a.modelo,
+                    a.n_serie, a.ubicacion, a.estado
+                )
+                contador += 1
+            except Exception as e:
+                errores.append(f"{a.codigo}: {e}") #Añadimos si un activo falló a la lista de errores
+        #Recargar la tabla y mostrar resultado
+        self.cargar_tabla()
+        if errores:
+            self.actualizar_log(f"ERROR: Importados {contador}/{len(activos)} activos - {len(errores)} con errores (BD)")
+        else:
+            self.actualizar_log(f"Importados {contador} activos correctamente en la BD")
 
     def exportar(self):
-        pass
+        #Obtener activos actuales de la tabla
+        activos = self.activos_actuales
+        ruta = config["ruta_export_activos"]
+        if exportar_activos_csv(activos, ruta):
+            self.actualizar_log(f"Exportados {len(activos)} activos")
+        else:
+            self.actualizar_log("Error al exportar")
+

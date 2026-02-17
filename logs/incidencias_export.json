@@ -1,0 +1,442 @@
+[
+    {
+        "id": 1,
+        "activo_id": 1,
+        "fecha_apertura": "2026-01-25 00:31:16.931942",
+        "prioridad": "Media",
+        "categoria": "Hardware",
+        "descripcion": "Puerto USB no funciona",
+        "estado": "En espera",
+        "tecnico": "Luis Rodríguez"
+    },
+    {
+        "id": 2,
+        "activo_id": 1,
+        "fecha_apertura": "2026-01-26 00:31:16.931942",
+        "prioridad": "Baja",
+        "categoria": "Software",
+        "descripcion": "Aplicación Office se cierra inesperadamente",
+        "estado": "Resuelta",
+        "tecnico": "Carlos López"
+    },
+    {
+        "id": 3,
+        "activo_id": 1,
+        "fecha_apertura": "2026-02-03 00:31:16.931942",
+        "prioridad": "Alta",
+        "categoria": "Hardware",
+        "descripcion": "Ratón no detectado",
+        "estado": "Resolviendo",
+        "tecnico": "Ana Martínez"
+    },
+    {
+        "id": 4,
+        "activo_id": 2,
+        "fecha_apertura": "2026-02-03 00:31:16.931942",
+        "prioridad": "Baja",
+        "categoria": "Otro",
+        "descripcion": "Solicitud de instalación de programa específico",
+        "estado": "Cerrada",
+        "tecnico": "Carlos López"
+    },
+    {
+        "id": 5,
+        "activo_id": 2,
+        "fecha_apertura": "2026-02-05 00:31:16.931942",
+        "prioridad": "Media",
+        "categoria": "Red",
+        "descripcion": "No hay conexión a internet",
+        "estado": "Resolviendo",
+        "tecnico": "María García"
+    },
+    {
+        "id": 6,
+        "activo_id": 3,
+        "fecha_apertura": "2026-02-17 00:31:16.931942",
+        "prioridad": "Alta",
+        "categoria": "Hardware",
+        "descripcion": "Ruido extraño en el disco duro",
+        "estado": "En espera",
+        "tecnico": "Ana Martínez"
+    },
+    {
+        "id": 7,
+        "activo_id": 3,
+        "fecha_apertura": "2026-01-23 00:31:16.931942",
+        "prioridad": "Baja",
+        "categoria": "Red",
+        "descripcion": "Conexión WiFi intermitente",
+        "estado": "En espera",
+        "tecnico": "Juan Pérez"
+    },
+    {
+        "id": 8,
+        "activo_id": 3,
+        "fecha_apertura": "2026-02-16 00:31:16.931942",
+        "prioridad": "Media",
+        "categoria": "Software",
+        "descripcion": "Pantalla azul al iniciar",
+        "estado": "Resuelta",
+        "tecnico": "Juan Pérez"
+    },
+    {
+        "id": 9,
+        "activo_id": 3,
+        "fecha_apertura": "2026-02-11 00:31:16.931942",
+        "prioridad": "Media",
+        "categoria": "Red",
+        "descripcion": "Impresora en red no detectada",
+        "estado": "Cerrada",
+        "tecnico": "María García"
+    },
+    {
+        "id": 10,
+        "activo_id": 4,
+        "fecha_apertura": "2026-02-12 00:31:16.931942",
+        "prioridad": "Media",
+        "categoria": "Software",
+        "descripcion": "No se puede instalar software necesario",
+        "estado": "Resuelta",
+        "tecnico": "Carlos López"
+    },
+    {
+        "id": 11,
+        "activo_id": 4,
+        "fecha_apertura": "2026-02-08 00:31:16.931942",
+        "prioridad": "Media",
+        "categoria": "Otro",
+        "descripcion": "Solicitud de instalación de programa específico",
+        "estado": "Resuelta",
+        "tecnico": "María García"
+    },
+    {
+        "id": 12,
+        "activo_id": 5,
+        "fecha_apertura": "2026-02-16 00:31:16.931942",
+        "prioridad": "Alta",
+        "categoria": "Hardware",
+        "descripcion": "Ruido extraño en el disco duro",
+        "estado": "Resolviendo",
+        "tecnico": "Ana Martínez"
+    },
+    {
+        "id": 13,
+        "activo_id": 6,
+        "fecha_apertura": "2026-01-20 00:31:16.931942",
+        "prioridad": "Baja",
+        "categoria": "Hardware",
+        "descripcion": "Pantalla parpadeante",
+        "estado": "Resuelta",
+        "tecnico": "Carlos López"
+    },
+    {
+        "id": 14,
+        "activo_id": 6,
+        "fecha_apertura": "2026-02-15 00:31:16.931942",
+        "prioridad": "Media",
+        "categoria": "Red",
+        "descripcion": "Velocidad de red muy baja",
+        "estado": "Cerrada",
+        "tecnico": "Carlos López"
+    },
+    {
+        "id": 15,
+        "activo_id": 7,
+        "fecha_apertura": "2026-02-18 00:31:16.931942",
+        "prioridad": "Baja",
+        "categoria": "Red",
+        "descripcion": "Impresora en red no detectada",
+        "estado": "Cerrada",
+        "tecnico": "Juan Pérez"
+    },
+    {
+        "id": 16,
+        "activo_id": 7,
+        "fecha_apertura": "2026-02-18 00:31:16.931942",
+        "prioridad": "Alta",
+        "categoria": "Otro",
+        "descripcion": "Configuración de correo electrónico",
+        "estado": "Cerrada",
+        "tecnico": "María García"
+    },
+    {
+        "id": 17,
+        "activo_id": 7,
+        "fecha_apertura": "2026-02-13 00:31:16.931942",
+        "prioridad": "Media",
+        "categoria": "Hardware",
+        "descripcion": "Pantalla parpadeante",
+        "estado": "Resolviendo",
+        "tecnico": "Juan Pérez"
+    },
+    {
+        "id": 18,
+        "activo_id": 8,
+        "fecha_apertura": "2026-02-05 00:31:16.931942",
+        "prioridad": "Media",
+        "categoria": "Hardware",
+        "descripcion": "Teclado con teclas que no responden",
+        "estado": "Cerrada",
+        "tecnico": "Ana Martínez"
+    },
+    {
+        "id": 19,
+        "activo_id": 8,
+        "fecha_apertura": "2026-02-13 00:31:16.931942",
+        "prioridad": "Media",
+        "categoria": "Otro",
+        "descripcion": "Necesita cambio de contraseña",
+        "estado": "Cerrada",
+        "tecnico": "Ana Martínez"
+    },
+    {
+        "id": 20,
+        "activo_id": 10,
+        "fecha_apertura": "2026-02-17 00:31:16.931942",
+        "prioridad": "Baja",
+        "categoria": "Red",
+        "descripcion": "No hay conexión a internet",
+        "estado": "Resolviendo",
+        "tecnico": "Luis Rodríguez"
+    },
+    {
+        "id": 21,
+        "activo_id": 10,
+        "fecha_apertura": "2026-02-09 00:31:16.931942",
+        "prioridad": "Baja",
+        "categoria": "Otro",
+        "descripcion": "Migración de datos a nuevo equipo",
+        "estado": "En espera",
+        "tecnico": "María García"
+    },
+    {
+        "id": 22,
+        "activo_id": 11,
+        "fecha_apertura": "2026-01-30 00:31:16.931942",
+        "prioridad": "Alta",
+        "categoria": "Software",
+        "descripcion": "Aplicación Office se cierra inesperadamente",
+        "estado": "Cerrada",
+        "tecnico": "Juan Pérez"
+    },
+    {
+        "id": 23,
+        "activo_id": 11,
+        "fecha_apertura": "2026-01-31 00:31:16.931942",
+        "prioridad": "Alta",
+        "categoria": "Otro",
+        "descripcion": "Necesita cambio de contraseña",
+        "estado": "Cerrada",
+        "tecnico": "Ana Martínez"
+    },
+    {
+        "id": 24,
+        "activo_id": 11,
+        "fecha_apertura": "2026-01-27 00:31:16.931942",
+        "prioridad": "Alta",
+        "categoria": "Red",
+        "descripcion": "No se puede acceder a carpetas compartidas",
+        "estado": "En espera",
+        "tecnico": "Ana Martínez"
+    },
+    {
+        "id": 25,
+        "activo_id": 13,
+        "fecha_apertura": "2026-01-27 00:31:16.931942",
+        "prioridad": "Alta",
+        "categoria": "Hardware",
+        "descripcion": "Ruido extraño en el disco duro",
+        "estado": "En espera",
+        "tecnico": "María García"
+    },
+    {
+        "id": 26,
+        "activo_id": 13,
+        "fecha_apertura": "2026-02-03 00:31:16.931942",
+        "prioridad": "Media",
+        "categoria": "Red",
+        "descripcion": "Velocidad de red muy baja",
+        "estado": "Resolviendo",
+        "tecnico": "Juan Pérez"
+    },
+    {
+        "id": 27,
+        "activo_id": 13,
+        "fecha_apertura": "2026-02-18 00:31:16.931942",
+        "prioridad": "Alta",
+        "categoria": "Red",
+        "descripcion": "Velocidad de red muy baja",
+        "estado": "Resolviendo",
+        "tecnico": "Ana Martínez"
+    },
+    {
+        "id": 28,
+        "activo_id": 13,
+        "fecha_apertura": "2026-02-10 00:31:16.931942",
+        "prioridad": "Alta",
+        "categoria": "Hardware",
+        "descripcion": "No enciende el equipo",
+        "estado": "En espera",
+        "tecnico": "Ana Martínez"
+    },
+    {
+        "id": 29,
+        "activo_id": 14,
+        "fecha_apertura": "2026-02-15 00:31:16.931942",
+        "prioridad": "Alta",
+        "categoria": "Hardware",
+        "descripcion": "Pantalla parpadeante",
+        "estado": "Cerrada",
+        "tecnico": "Luis Rodríguez"
+    },
+    {
+        "id": 30,
+        "activo_id": 14,
+        "fecha_apertura": "2026-02-02 00:31:16.931942",
+        "prioridad": "Alta",
+        "categoria": "Hardware",
+        "descripcion": "Ventilador haciendo ruido excesivo",
+        "estado": "Cerrada",
+        "tecnico": "Luis Rodríguez"
+    },
+    {
+        "id": 31,
+        "activo_id": 14,
+        "fecha_apertura": "2026-01-29 00:31:16.931942",
+        "prioridad": "Media",
+        "categoria": "Red",
+        "descripcion": "Conexión WiFi intermitente",
+        "estado": "En espera",
+        "tecnico": "María García"
+    },
+    {
+        "id": 32,
+        "activo_id": 14,
+        "fecha_apertura": "2026-02-02 00:31:16.931942",
+        "prioridad": "Media",
+        "categoria": "Red",
+        "descripcion": "Conexión WiFi intermitente",
+        "estado": "En espera",
+        "tecnico": "Luis Rodríguez"
+    },
+    {
+        "id": 33,
+        "activo_id": 15,
+        "fecha_apertura": "2026-01-31 00:31:16.931942",
+        "prioridad": "Alta",
+        "categoria": "Red",
+        "descripcion": "Impresora en red no detectada",
+        "estado": "Resolviendo",
+        "tecnico": "Ana Martínez"
+    },
+    {
+        "id": 34,
+        "activo_id": 15,
+        "fecha_apertura": "2026-02-06 00:31:16.931942",
+        "prioridad": "Alta",
+        "categoria": "Otro",
+        "descripcion": "Migración de datos a nuevo equipo",
+        "estado": "Resuelta",
+        "tecnico": "Juan Pérez"
+    },
+    {
+        "id": 35,
+        "activo_id": 15,
+        "fecha_apertura": "2026-01-30 00:31:16.931942",
+        "prioridad": "Media",
+        "categoria": "Red",
+        "descripcion": "No hay conexión a internet",
+        "estado": "Resuelta",
+        "tecnico": "Ana Martínez"
+    },
+    {
+        "id": 36,
+        "activo_id": 15,
+        "fecha_apertura": "2026-02-07 00:31:16.931942",
+        "prioridad": "Media",
+        "categoria": "Hardware",
+        "descripcion": "Puerto USB no funciona",
+        "estado": "Resuelta",
+        "tecnico": "Luis Rodríguez"
+    },
+    {
+        "id": 37,
+        "activo_id": 15,
+        "fecha_apertura": "2026-02-02 00:31:16.931942",
+        "prioridad": "Alta",
+        "categoria": "Hardware",
+        "descripcion": "Ventilador haciendo ruido excesivo",
+        "estado": "Resuelta",
+        "tecnico": "Luis Rodríguez"
+    },
+    {
+        "id": 38,
+        "activo_id": 16,
+        "fecha_apertura": "2026-02-14 00:31:16.931942",
+        "prioridad": "Alta",
+        "categoria": "Otro",
+        "descripcion": "Solicitud de instalación de programa específico",
+        "estado": "Cerrada",
+        "tecnico": "Luis Rodríguez"
+    },
+    {
+        "id": 39,
+        "activo_id": 16,
+        "fecha_apertura": "2026-02-11 00:31:16.931942",
+        "prioridad": "Baja",
+        "categoria": "Otro",
+        "descripcion": "Migración de datos a nuevo equipo",
+        "estado": "Cerrada",
+        "tecnico": "Ana Martínez"
+    },
+    {
+        "id": 40,
+        "activo_id": 16,
+        "fecha_apertura": "2026-01-27 00:31:16.931942",
+        "prioridad": "Baja",
+        "categoria": "Hardware",
+        "descripcion": "Pantalla parpadeante",
+        "estado": "En espera",
+        "tecnico": "Ana Martínez"
+    },
+    {
+        "id": 41,
+        "activo_id": 16,
+        "fecha_apertura": "2026-02-08 00:31:16.931942",
+        "prioridad": "Baja",
+        "categoria": "Hardware",
+        "descripcion": "Teclado con teclas que no responden",
+        "estado": "Resuelta",
+        "tecnico": "Luis Rodríguez"
+    },
+    {
+        "id": 42,
+        "activo_id": 16,
+        "fecha_apertura": "2026-01-20 00:31:16.931942",
+        "prioridad": "Media",
+        "categoria": "Otro",
+        "descripcion": "Necesita cambio de contraseña",
+        "estado": "En espera",
+        "tecnico": "Luis Rodríguez"
+    },
+    {
+        "id": 43,
+        "activo_id": 17,
+        "fecha_apertura": "2026-02-06 00:31:16.931942",
+        "prioridad": "Alta",
+        "categoria": "Red",
+        "descripcion": "No conecta con servidor de archivos",
+        "estado": "Resolviendo",
+        "tecnico": "Juan Pérez"
+    },
+    {
+        "id": 44,
+        "activo_id": 18,
+        "fecha_apertura": "2026-01-29 00:31:16.931942",
+        "prioridad": "Baja",
+        "categoria": "Red",
+        "descripcion": "Conexión WiFi intermitente",
+        "estado": "Resuelta",
+        "tecnico": "María García"
+    }
+]

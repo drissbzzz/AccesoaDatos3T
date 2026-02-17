@@ -1,0 +1,9 @@
+{
+  "ruta_bd": "db/inventario.db",
+  "ruta_log": "logs/app.log",
+  "ruta_export_activos": "logs/activos_export.csv",
+  "ruta_export_incidencias": "logs/incidencias_export.json",
+  "color_boton": "#FF6B00",
+  "color_hover": "#FF8C00",
+  "color_fondo": "#1a1a1a"
+}

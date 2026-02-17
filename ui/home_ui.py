@@ -1,14 +1,16 @@
 import customtkinter as ctk
 
+from utils.config import config
+
 #Configuración global de apariencia
-color_boton = "#FF6B00"
-color_hover = "#FF8C00"
-color_fondo = "#1a1a1a"
-ctk.set_appearance_mode("dark")
+color_boton = config["color_boton"]
+color_hover = config["color_hover"]
+color_fondo = config["color_fondo"]
 
 class Home(ctk.CTkToplevel):
-    def __init__(self, parent):
+    def __init__(self, parent, rol):
         super().__init__(parent)
+        self.rol = rol
         self.title("Gestión de Activos e Incidencias")
         self.update_idletasks()  #Obtener dimensiones reales para centrar contenido
         ancho_ventana = 600
@@ -39,7 +41,7 @@ class Home(ctk.CTkToplevel):
         btnActivos.grid(row=1, column=0, padx=8)
         btnIncidencias = ctk.CTkButton(menu, text="Incidencias", fg_color=color_hover,hover_color=color_boton, command=self.incidencias)
         btnIncidencias.grid(row=2, column=0)
-        btnEstadisticas = ctk.CTkButton(menu, text="Estadísticas", fg_color=color_hover,hover_color=color_boton)  # , command=self.stats)
+        btnEstadisticas = ctk.CTkButton(menu, text="Estadísticas", fg_color=color_hover,hover_color=color_boton, command=self.estadisticas)
         btnEstadisticas.grid(row=3, column=0)
         btnSalir = ctk.CTkButton(menu, text="Salir", fg_color=color_hover,hover_color=color_boton, command=self.login)
         btnSalir.grid(row=5, column=0)
@@ -56,10 +58,15 @@ class Home(ctk.CTkToplevel):
 
     def activos(self):
         from ui.activos_ui import Activos
-        app = Activos(self)
+        app = Activos(self, self.rol)
         app.grab_set()
 
     def incidencias(self):
         from ui.incidencias_ui import Incidencias
-        app = Incidencias(self)
+        app = Incidencias(self, self.rol)
+        app.grab_set()
+
+    def estadisticas(self):
+        from ui.estadisticas_ui import Estadisticas
+        app = Estadisticas(self, self.rol)
         app.grab_set()
